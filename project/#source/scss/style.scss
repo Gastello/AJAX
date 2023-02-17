@@ -1,0 +1,121 @@
+@import "null_style.scss";
+/*-------------------------------FONTS-----------------------------------*/
+//&display=swap&subset=cyrillic-ext
+@import "fonts.scss";
+
+/*-------------------------DEFAULT FONT-----------------------------*/
+$fontFamily: "";
+/*-------------------------------VARIABLES-------------------------------*/
+$paddingContainer: 15;
+$maxWidthContainer: 960 + $paddingContainer * 2;
+
+$md1: $maxWidthContainer + $paddingContainer;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+
+/*
+   @media (max-width: $md2) {
+   }
+   @media (max-width: $md3) {
+   }
+   @media (max-width: $md4) {
+   }
+*/
+/*--------------------------CONTENT WRAPPERS------------------------------*/
+body {
+   font-family: $fontFamily; 
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+.container {
+   max-width: $maxWidthContainer + px;
+   margin: 0 auto;
+   padding: 0 $paddingContainer + px;
+}
+
+.page {
+   padding: 30px;
+}
+
+/*------------------------------HEADER------------------------------------*/
+@import "header.scss";
+/*-------------------------------BEM-BLOCKS-------------------------------*/
+
+.country__wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 30px;
+   max-width: 1000px; 
+   margin: 0 auto;
+}
+
+.country {
+   padding: 15px;
+   background-color: rgb(255, 255, 255);
+   flex: 0 0 300px; 
+   border-radius: 20px;
+   filter: drop-shadow(black 2px 2px 20px);
+   // .country__img
+
+   &__img {
+      background-color: aliceblue;
+      height: 150px;
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 20px;
+      img {
+         object-fit: fill;
+         height: 100%;
+         width: 100%;
+      }
+   }
+
+   // .country__data
+
+   &__data {
+   }
+
+   // .country__name
+
+   &__name {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 5px;
+   }
+
+   // .country__region
+
+   &__region {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 5px;
+      color: gray;
+   }
+
+   // .country__column
+
+   &__column {
+      & > *:not(:last-child) {
+         margin-bottom: 10px;
+      }
+   }
+
+   // .country__row
+
+   &__row {
+      & > *:first-child {
+         display: inline-block;
+         width: 30px;
+         text-align: center;
+      }
+   }
+}
