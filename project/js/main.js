@@ -67,5 +67,5 @@ function getNeighbours(neighbours) {
     });
 }
 
-getCountryData(`russia`);
+getCountryData(`ukraine`);
 
