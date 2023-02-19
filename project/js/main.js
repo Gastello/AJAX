@@ -5,7 +5,7 @@ function displayCountry(data, additionalClass) {
     const isEnemy = nameOfficial == `Russian Federation`;
     const language = Object.values(data.languages)[0];
     const currencyName = Object.values(data.currencies)[0].name;
-    const population = (data.population / 1000000).toFixed(2);
+    const population = (data.population / 10 ** 6).toFixed(2);
     const region = data.region;
     const flagSource = data.flags.png;
     const htmlCard = `  
