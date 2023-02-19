@@ -2,6 +2,10 @@ const container = document.querySelector('.countries');
 
 
 function getCountryData(country, isParent = true, isEnemy = false) {
+    if(country=='russian'){
+        console.log(`don't want to spend my time to this shit`);
+        return;
+    }
     let additionalClass = "";
     const nameLink = `https://restcountries.com/v3.1/name/`;
     const codeLink = `https://restcountries.com/v3.1/alpha/`;
