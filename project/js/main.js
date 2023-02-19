@@ -49,7 +49,7 @@ function getNeighbours(neighbours) {
 }
 function getCountryData(country, isParent = true) {
     if (country == 'russia') {
-        container.textContent = `don't want to waste my time to this shit`;
+        container.innerHTML = `<img src="https://i.pinimg.com/originals/38/23/d2/3823d2adfa2252c9f263dbd28e7adcf6.jpg" alt="">`;
         return;
     }
 
