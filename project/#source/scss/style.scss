@@ -4,7 +4,7 @@
 @import "fonts.scss";
 
 /*-------------------------DEFAULT FONT-----------------------------*/
-$fontFamily: "";
+$fontFamily: Arial, Helvetica, sans-serif;
 /*-------------------------------VARIABLES-------------------------------*/
 $paddingContainer: 15;
 $maxWidthContainer: 960 + $paddingContainer * 2;
@@ -24,8 +24,7 @@ $md4: 479.98px;
 */
 /*--------------------------CONTENT WRAPPERS------------------------------*/
 body {
-   font-family: $fontFamily; 
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: $fontFamily;
 }
 
 .wrapper {
@@ -50,20 +49,50 @@ body {
 @import "header.scss";
 /*-------------------------------BEM-BLOCKS-------------------------------*/
 
-.country__wrapper {
+.countries {
    display: flex;
    flex-wrap: wrap;
    gap: 30px;
-   max-width: 1000px; 
+   max-width: 1000px;
    margin: 0 auto;
+   align-items: center;
 }
 
 .country {
    padding: 15px;
    background-color: rgb(255, 255, 255);
-   flex: 0 0 300px; 
    border-radius: 20px;
-   filter: drop-shadow(black 2px 2px 20px);
+
+   // .country__wrapper
+
+   &__wrapper {
+      filter: drop-shadow(rgba(0, 0, 0, 0.516) 2px 2px 20px);
+      flex: 0 0 300px;
+   }
+
+   // .country__neighbour
+
+   &__neighbour {
+      transform: scale(0.7);
+      & > * {
+         position: relative;
+         &::before {
+            content: "Neighbour";
+            position: absolute;
+            z-index: -1;
+            font-size: 24px;
+            font-style: italic;
+            background-color: rgb(255, 255, 255);
+            filter: drop-shadow(rgba(0, 0, 0, 0.467) 2px 2px 20px);
+            padding: 10px;
+            border-radius: 20px;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+         }
+      }
+   }
+  
    // .country__img
 
    &__img {
