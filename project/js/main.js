@@ -3,7 +3,7 @@ const container = document.querySelector('.countries');
 
 function getCountryData(country, isParent = true, isEnemy = false) {
     if (country == 'russia') {
-        console.log(`don't want to spend my time to this shit`);
+        console.log(`don't want to waste my time to this shit`);
         return;
     }
     let additionalClass = "";
