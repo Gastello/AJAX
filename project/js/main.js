@@ -2,7 +2,7 @@ const container = document.querySelector('.countries');
 
 
 function getCountryData(country, isParent = true, isEnemy = false) {
-    if(country=='russian'){
+    if (country == 'russia') {
         console.log(`don't want to spend my time to this shit`);
         return;
     }
@@ -29,19 +29,19 @@ function getCountryData(country, isParent = true, isEnemy = false) {
                     </div>
                     <div class="country__data">
                         <h3 class="country__name">
-                            ${isEnemy?`Shit Federation`:data.name.official}
+                            ${isEnemy ? `Shit Federation` : data.name.official}
                         </h3>
                         <h4 class="country__region">
-                            ${isEnemy?`Shit Region`:data.region}
+                            ${isEnemy ? `Shit Region` : data.region}
                         </h4>
                         <div class="country__column">
                             <p class="country__row">
                             <span>👨‍👩‍👦‍👦</span>
-                            <span>${(data.population / 1000000).toFixed(2)} million ${isEnemy?` shit eaters`:''}</span>
+                            <span>${(data.population / 1000000).toFixed(2)} million ${isEnemy ? ` shit eaters` : ''}</span>
                             </p>
                             <p class="country__row">
                             <span>🌐</span>
-                            <span>${isEnemy?language +` shit language`:language}</span>
+                            <span>${isEnemy ? language + ` shit language` : language}</span>
                             </p>
                             <p class="country__row">
                             <span>💸</span>
@@ -67,5 +67,5 @@ function getNeighbours(neighbours) {
     });
 }
 
-getCountryData(`ukraine`); 
+getCountryData(`russia`);
 
