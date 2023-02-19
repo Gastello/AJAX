@@ -92,7 +92,7 @@ body {
          }
       }
    }
-  
+
    // .country__img
 
    &__img {
@@ -145,6 +145,46 @@ body {
          display: inline-block;
          width: 30px;
          text-align: center;
+      }
+   }
+}
+
+.controls {
+   padding: 50px 0;
+   // .controls__wrapper
+
+   &__wrapper {
+      display: flex;
+   }
+   margin: 0 auto;
+   display: flex;
+   gap: 50px;
+   // .controls__input
+
+   &__input {
+      font-size: 32px;
+      padding: 5px 10px;
+      background-color: white;
+      filter: drop-shadow(rgba(0, 0, 0, 0.516) 2px 2px 20px);
+      border-radius: 10px;
+
+      &::placeholder {
+         color: gray;
+         font-style: italic;
+      }
+   }
+
+   // .controls__button
+
+   &__button {
+      font-size: 32px;
+      padding: 5px 10px;
+      background-color: rgb(255, 255, 255);
+      filter: drop-shadow(rgba(0, 0, 0, 0.516) 2px 2px 20px);
+      border-radius: 10px;
+
+      &:active {
+         opacity: 0.9;
       }
    }
 }

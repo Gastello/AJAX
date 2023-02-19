@@ -1,5 +1,6 @@
 const container = document.querySelector('.countries');
-
+const input = document.getElementById('input-controls');
+const button = document.getElementById('button-controls');
 function displayCountry(data, additionalClass) {
     const nameOfficial = data.name.official;
     const isEnemy = nameOfficial == `Russian Federation`;
@@ -70,5 +71,10 @@ function getCountryData(country, isParent = true) {
     });
 }
 
-getCountryData(`ukraine`);
+button.onclick = buttonClicked;
 
+function buttonClicked() {
+    const country = input.value.trim().toLowerCase();
+    container.innerHTML = '';
+    getCountryData(country);
+}
