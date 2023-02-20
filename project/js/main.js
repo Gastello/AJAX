@@ -47,28 +47,51 @@ function getNeighbours(neighbours) {
         getCountryData(country, false);
     });
 }
+// function getCountryData(country, isParent = true) {
+//     if (country == 'russia') {
+//         container.innerHTML = `<img src="https://i.pinimg.com/originals/38/23/d2/3823d2adfa2252c9f263dbd28e7adcf6.jpg" alt="">`;
+//         return;
+//     }
+
+//     let additionalClass = "";
+//     const nameLink = `https://restcountries.com/v3.1/name/`;
+//     const codeLink = `https://restcountries.com/v3.1/alpha/`;
+//     const request = new XMLHttpRequest();
+//     if (isParent) {
+//         request.open('GET', `${nameLink}${country}`);
+//     } else {
+//         request.open('GET', `${codeLink}${country}`);
+//         additionalClass = 'country__neighbour';
+//     }
+//     request.send();
+//     request.addEventListener('load', function () {
+//         const [data] = JSON.parse(this.responseText);
+//         displayCountry(data, additionalClass);
+//         if (isParent) getNeighbours(data.borders);
+//     });
+// }
+
 function getCountryData(country, isParent = true) {
-    if (country == 'russia') {
+    if (country == 'russia' || country == 'russian') {
         container.innerHTML = `<img src="https://i.pinimg.com/originals/38/23/d2/3823d2adfa2252c9f263dbd28e7adcf6.jpg" alt="">`;
         return;
     }
 
     let additionalClass = "";
-    const nameLink = `https://restcountries.com/v3.1/name/`;
-    const codeLink = `https://restcountries.com/v3.1/alpha/`;
-    const request = new XMLHttpRequest();
-    if (isParent) {
-        request.open('GET', `${nameLink}${country}`);
-    } else {
-        request.open('GET', `${codeLink}${country}`);
+    const nameLink = `https://restcountries.com/v3.1/name/${country}`;
+    const codeLink = `https://restcountries.com/v3.1/alpha/${country}`;
+    if (!isParent) {
         additionalClass = 'country__neighbour';
     }
-    request.send();
-    request.addEventListener('load', function () {
-        const [data] = JSON.parse(this.responseText);
-        displayCountry(data, additionalClass);
-        if (isParent) getNeighbours(data.borders);
-    });
+    fetch(isParent ? nameLink : codeLink)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            const [data] = response;
+            console.log(data);
+            displayCountry(data, additionalClass);
+            if (isParent) getNeighbours(data.borders);
+        })
 }
 
 button.onclick = buttonClicked;
